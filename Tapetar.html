@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamer Tapetar - Restauracija i Presvlačenje Namještaja</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f8f8;
+            color: #111;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 0;
+        }
+        header {
+            text-align: left;
+            background: url('header-background.jpg') center/cover;
+            color:#404040;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            margin: 0;
+        }
+        .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    margin: 0;
+    padding: 5px; /* Add some padding */
+    border-radius: 8px; /* Match your design */
+}
+
+.logo svg {
+    width: 100%;
+    height: 100%;
+    display: block; /* Ensure proper rendering */
+    fill: #404040; /* Set your preferred color */
+}
+        .header-center {
+            text-align: center;
+            flex-grow: 1;
+            margin-left: 80px;
+        }
+        header h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            
+        }
+        .header-nav {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-button {
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .nav-button:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        /* What We Offer Section */
+        .services-section {
+            border-top: 2px solid #ddd;
+        }
+        .services-title {
+            text-align: center;
+            font-size: 32px;
+            margin: 0;
+            color: #404040;
+            background-color: #eee;
+            padding: 20px 0;
+        }
+        
+        /* Before-After Section */
+        .before-after-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 40px;
+            background-color: #eee;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .before-after-container:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .before-after {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .image-container {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        /* Custom Service Section */
+        .custom-service {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    background-color: #eee;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.custom-image-container {
+    height: 400px;
+    display: inline-flex; /* Makes container shrink to fit content */
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #f0f0f0;
+}
+
+.custom-image-container img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+        
+        .description {
+            width: 50%;
+            padding: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .services-title {
+    text-align: center;
+    font-size: 32px;
+    margin: 0;
+    color: #404040;
+    background-color: #eee;
+    padding: 20px 0;
+    font-weight: bold; /* Match h1 weight */
+    letter-spacing: 1px; /* Match h1 letter spacing */
+    /* Add any other h1 styles you want to match */
+}
+        
+        /* Contact Section */
+        .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+        .map {
+            width: 60%;
+            min-height: 450px;
+        }
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+        .contact {
+            width: 40%;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 40px 0;
+            border-top: 2px solid #ddd;
+            background-color: #eee;
+            padding: 40px;
+            border-radius: 8px;
+        }
+        .about img {
+            width: 40%;
+            max-width: 300px;
+            border-radius: 8px;
+        }
+        .about-text {
+            width: 60%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 70px 0 20px !important;
+            }
+            .logo {
+                position: static;
+                margin-bottom: 15px;
+            }
+            .header-center {
+                margin-left: 0;
+                order: 2;
+            }
+            .header-nav {
+                order: 3;
+                margin-top: 15px;
+            }
+            .before-after-container,
+            .custom-service {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                padding: 20px;
+            }
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+            .image-container,
+            .custom-image {
+                width: 100%;
+                aspect-ratio: 1/1;
+            }
+            .description {
+                width: 100%;
+            }
+            .info {
+                flex-direction: column;
+            }
+            .map,
+            .contact {
+                width: 100%;
+            }
+            .about {
+                flex-direction: column;
+            }
+            .about img, .about-text {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+
+        <svg version="1.1" id="svg3818" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="New document 5" inkscape:version="0.48.4 r9939" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100px" height="100px" viewBox="0 0 1200.00 1200.00" enable-background="new 0 0 1200 1200" xml:space="preserve" fill="#404040" stroke="#404040" stroke-width="0.012" transform="rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="33.60000000000001"> <g id="layer1" transform="translate(0,147.63782)" inkscape:label="Layer 1" inkscape:groupmode="layer"> <path id="path4353" inkscape:connector-curvature="0" sodipodi:nodetypes="sccccccsccsccsccccccsssssssssssssssssccccccccccccccccccc" d=" M516.786-69.234c-89.537,0-162.129,72.592-162.129,162.129c7.674,109.361,81.438,140.506,162.946,201.74 c60.609,38.349,53.187,81.094,65.404,149.848c-53.95,13.664-118.616,29.877-157.011-2.765l-91.505-65.098 c-0.131-0.108-0.277-0.199-0.409-0.307c-27.968-22.936-63.775-36.745-102.764-36.745c-68.543,0-127.057,42.54-150.768,102.661 c-3.122,12.075-5.116,12.007-15.66,11.976C29.033,454.205,0,483.237,0,519.099c0,35.858,29.033,64.893,64.893,64.893 c30.988-3.452,19.907-7.164,37.461,15.967c29.63,38.812,76.376,63.869,128.966,63.869c66.145,0,122.994-39.62,148.209-96.418 c28.644,16.406,53.42,22.574,86.081,27.021H1200c-90.997-165.848-316.997-140.224-465.608-154.452 c-30.518-75.807-37.399-175.939-108.188-226.817h-0.717c32.815-29.669,53.429-72.545,53.429-120.267 C678.915,3.357,606.323-69.234,516.786-69.234L516.786-69.234z M516.786,11.83c44.769,0,81.063,36.296,81.063,81.063 c0,44.769-36.296,81.064-81.063,81.064c-44.769,0-81.064-36.296-81.064-81.064C435.722,48.126,472.019,11.83,516.786,11.83z M231.32,420.633c44.768,0,81.064,36.296,81.064,81.064c0,44.768-36.296,81.063-81.064,81.063s-81.064-36.297-81.064-81.063 C150.256,456.929,186.553,420.633,231.32,420.633z M664.074,454.614c25.438,0,46.059,20.621,46.059,46.06 s-20.621,46.06-46.059,46.06c-25.438,0-46.061-20.621-46.061-46.06C618.015,475.235,638.636,454.614,664.074,454.614z M667.554,676.62c62.491,126.303,105.737,281.315,263.46,297.339L819.856,676.62H667.554z M179.939,766.385v72.468h157.932v-72.468 H179.939z M464.176,766.385v72.468h174.311l-33.367-72.468H464.176z M959.673,766.385l21.494,72.468H1139.1v-72.468H959.673z"></path> </g> </g><g id="SVGRepo_iconCarrier"> <g id="layer1" transform="translate(0,147.63782)" inkscape:label="Layer 1" inkscape:groupmode="layer"> <path id="path4353" inkscape:connector-curvature="0" sodipodi:nodetypes="sccccccsccsccsccccccsssssssssssssssssccccccccccccccccccc" d=" M516.786-69.234c-89.537,0-162.129,72.592-162.129,162.129c7.674,109.361,81.438,140.506,162.946,201.74 c60.609,38.349,53.187,81.094,65.404,149.848c-53.95,13.664-118.616,29.877-157.011-2.765l-91.505-65.098 c-0.131-0.108-0.277-0.199-0.409-0.307c-27.968-22.936-63.775-36.745-102.764-36.745c-68.543,0-127.057,42.54-150.768,102.661 c-3.122,12.075-5.116,12.007-15.66,11.976C29.033,454.205,0,483.237,0,519.099c0,35.858,29.033,64.893,64.893,64.893 c30.988-3.452,19.907-7.164,37.461,15.967c29.63,38.812,76.376,63.869,128.966,63.869c66.145,0,122.994-39.62,148.209-96.418 c28.644,16.406,53.42,22.574,86.081,27.021H1200c-90.997-165.848-316.997-140.224-465.608-154.452 c-30.518-75.807-37.399-175.939-108.188-226.817h-0.717c32.815-29.669,53.429-72.545,53.429-120.267 C678.915,3.357,606.323-69.234,516.786-69.234L516.786-69.234z M516.786,11.83c44.769,0,81.063,36.296,81.063,81.063 c0,44.769-36.296,81.064-81.063,81.064c-44.769,0-81.064-36.296-81.064-81.064C435.722,48.126,472.019,11.83,516.786,11.83z M231.32,420.633c44.768,0,81.064,36.296,81.064,81.064c0,44.768-36.296,81.063-81.064,81.063s-81.064-36.297-81.064-81.063 C150.256,456.929,186.553,420.633,231.32,420.633z M664.074,454.614c25.438,0,46.059,20.621,46.059,46.06 s-20.621,46.06-46.059,46.06c-25.438,0-46.061-20.621-46.061-46.06C618.015,475.235,638.636,454.614,664.074,454.614z M667.554,676.62c62.491,126.303,105.737,281.315,263.46,297.339L819.856,676.62H667.554z M179.939,766.385v72.468h157.932v-72.468 H179.939z M464.176,766.385v72.468h174.311l-33.367-72.468H464.176z M959.673,766.385l21.494,72.468H1139.1v-72.468H959.673z"></path> </g> </g></svg>
+    
+    </div>
+    <div class="container">
+        <header>
+            
+            <div class="header-center">
+                <h1>Tamer Tapetar</h1>
+            </div>
+            <div class="header-nav">
+                <button class="nav-button" onclick="scrollToSection('services')">Usluge</button>
+                <button class="nav-button" onclick="scrollToSection('about')">O nama</button>
+                <button class="nav-button" onclick="scrollToSection('contact')">Kontakt</button>
+            </div>
+        </header>
+        
+        <section class="services-section" id="services">
+            <h2 class="services-title">Šta Nudimo</h2>
+            
+            <!-- Presvlačenje namještaja Section -->
+            <div class="before-after-container">
+                <div class="before-after">
+                    <div class="image-container">
+                        <img src="img/Dvosjed_prije.jpg" alt="Prije restauracije">
+                    </div>
+                    <div class="image-container">
+                        <img src="img/Dvosjed_poslije.jpg" alt="Poslije restauracije">
+                    </div>
+                </div>
+                <div class="description">
+                    <h3 class="service-title">Presvlačenje Namještaja</h3>
+                    <p>Naš specijalitet je potpuna obnova i presvlačenje vašeg namještaja. Koristimo samo kvalitetne materijale i pružamo garanciju na sve naše radove. Vraćamo život starom namještaju, čineći ga funkcionalnim i lijepim za još mnogo godina.</p>
+                </div>
+            </div>
+            
+            <div class="before-after-container">
+                <div class="before-after">
+                    <div class="image-container">
+                        <img src="img/Jednosjed_prije.jpg" alt="Prije restauracije">
+                    </div>
+                    <div class="image-container">
+                        <img src="img/Jednosjed_poslije.jpg" alt="Poslije restauracije">
+                    </div>
+                </div>
+                <div class="description">
+                    <h3 class="service-title">Restauracija Antiknog Namještaja</h3>
+                    <p>Posebnu pažnju posvećujemo antiknom namještaju, čuvajući njegovu autentičnost dok istovremeno osiguravamo modernu udobnost i funkcionalnost. Svaki komad tretiramo s posebnom pažnjom i poštovanjem.</p>
+                </div>
+            </div>
+            
+            <!-- Custom Service Section -->
+            <div class="custom-service">
+                <div class="custom-image-container">
+                    <img src="img/minitabure.PNG" alt="tabure">
+                </div>
+                <div class="description">
+                    <h3 class="service-title">Pravljenje Taburea po Narudžbi</h3>
+                    <p>Pravimo taburee po vašoj mjeri i želji. Koristimo kvalitetne materijale i pružamo širok izbor tkanina i boja kako bismo stvorili savršen dodatak vašem enterijeru.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="info" id="contact">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.644420146092!2d18.412429776090104!3d43.87591517109233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758ced654fc9471%3A0xecf013b85ebca933!2sAsafa%20Serdarevi%C4%87a%207%2C%20Sarajevo%2071000!5e1!3m2!1sen!2sba!4v1742818671635!5m2!1sen!2sba" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="contact">
+                <h2>Kontakt</h2>
+                <p>Adresa: Asafa Serdarevića 7, Sarajevo 71000</p>
+                <p>Telefon: +387 61 123 456</p>
+                <p>Email: <a href="mailto:dzanieterle531@gmail.com">dzanieterle531@gmail.com</a></p>
+                <p>Radno vrijeme: Pon-Pet: 08:00-16:00</p>
+            </div>
+        </section>
+        
+        <section class="about" id="about">
+            <img src="tamer-profile.jpg" alt="Tamer Tapetar">
+            <div class="about-text">
+                <h2>O nama</h2>
+                <p>Tamer je iskusni tapetar s 30 godina iskustva u restauraciji i presvlačenju namještaja. Strastveno pristupa svakom projektu, vraćajući starim komadima njihovu prvobitnu ljepotu i udobnost. Njegova preciznost, kvalitetni materijali i pažnja prema detaljima osiguravaju dugotrajne i estetski besprijekorne rezultate. Bilo da se radi o modernizaciji kauča, obnovi antiknih stolica ili prilagođenim tapetarskim rješenjima, Tamer svojim radom unosi novu vrijednost u svaki prostor.</p>
+                <p>Pored tradicionalnih tapetarskih usluga, Tamer nudi i izradu custom namještaja po narudžbi, kao što su taburei i druge dekorativne komade.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
